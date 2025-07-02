@@ -1,891 +1,1202 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Más que Afirmaciones - Reprograma tu Mente y Crea tu Realidad</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --color-primary: #f4cae0; /* Púrpura más suave */
-            --color-secondary: #E5C07B; /* Dorado suave */
-            --color-background-light: #FAFAFA; /* Blanco muy claro */
-            --color-text-dark: #333842; /* Gris oscuro */
-            --color-text-light: #FFFFFF;
-            --color-accent: #A68FBD; /* Un poco más oscuro que primary (el anterior primary) */
-            --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            --border-radius: 12px;
-        }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            line-height: 1.7;
-            margin: 0;
-            padding: 0;
-            background-color: var(--color-background-light);
-            color: var(--color-text-dark);
-            overflow-x: hidden; /* Evita scroll horizontal */
-        }
-
-        h1, h2, h3, h4 {
-            font-family: 'Playfair Display', serif;
-            color: var(--color-text-dark);
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        h1 {
-            font-size: clamp(2.5em, 6vw, 4.5em);
-            color: var(--color-text-light);
-            line-height: 1.1;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
-            animation: fadeInScale 1.5s ease-out forwards;
-        }
-
-        h2 {
-            font-size: clamp(2em, 5vw, 3.5em);
-            position: relative;
-            padding-bottom: 15px;
-        }
-
-        h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background-color: var(--color-secondary);
-            border-radius: 2px;
-        }
-
-        h3 {
-            font-size: clamp(1.5em, 4vw, 2.5em);
-            color: var(--color-primary);
-        }
-
-        p {
-            font-size: clamp(1em, 2vw, 1.15em);
-            margin-bottom: 1em;
-            text-align: center;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .section {
-            padding: 60px 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .section:nth-child(even) {
-            background-color: var(--color-background-light);
-        }
-
-        .section:nth-child(odd):not(.hero, .offer-cta-section) {
-            background-color: var(--color-primary);
-            color: var(--color-text-light);
-        }
-        .section:nth-child(odd):not(.hero, .offer-cta-section) h2,
-        .section:nth-child(odd):not(.hero, .offer-cta-section) h3,
-        .section:nth-child(odd):not(.hero, .offer-cta-section) p {
-            color: var(--color-text-light);
-        }
-        .section:nth-child(odd):not(.hero, .offer-cta-section) h2::after {
-            background-color: var(--color-secondary);
-        }
-
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
-            color: var(--color-text-light);
-            padding: 80px 20px;
+    <link rel="icon" type="image/x-icon" href="https://d2543nuuc0wvdg.cloudfront.net/favicon.ico">
+    <meta charSet="utf-8" />
+    <title data-react-helmet="true"></title>
+    <meta data-react-helmet="true" name="viewport" content="width=device-width, initial-scale=1" />
+    <meta data-react-helmet="true" name="robots" content="noindex" />
+    <meta data-react-helmet="true" name="title" content="" />
+    <meta data-react-helmet="true" name="description" content="" />
+    <meta data-react-helmet="true" name="author" content="" />
+    <meta data-react-helmet="true" name="keywords" content="" />
+    <meta data-react-helmet="true" property="og:image" content="" />
+    <meta data-react-helmet="true" property="og:url" content="" />
+    <style data-styled="" data-styled-version="6.1.13">
+        .kjsFmu {
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 80vh;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
+            grid-column-start: 1;
+            grid-column-end: 13;
+            align-self: flex-start;
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50px;
-            left: -50px;
-            width: 200px;
-            height: 200px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            animation: floatBubble 10s infinite ease-in-out;
+        /*!sc*/
+        @media only screen and (max-width: 800px) {
+            .kjsFmu {
+                align-self: unset;
+                width: 100%;
+                grid-column-start: 1;
+                grid-column-end: 12;
+                padding-left: 0;
+                padding-right: 0;
+            }
         }
 
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: -70px;
-            right: -70px;
-            width: 250px;
-            height: 250px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            animation: floatBubble 12s infinite ease-in-out reverse;
+        /*!sc*/
+        data-styled.g168[id="sc-ajmIN"] {
+            content: "kjsFmu,"
         }
 
-        .hero-subtitle {
-            font-size: clamp(1.2em, 2.5vw, 1.8em);
-            margin-top: 15px;
-            margin-bottom: 40px;
-            opacity: 0;
-            animation: fadeIn 2s 1s ease-out forwards;
-        }
-
-        .hero-book-image {
-            max-width: 450px; /* Tamaño adecuado para la portada */
-            height: auto;
-            animation: fadeInFromTop 1.5s ease-out forwards;
-        }
-
-        .btn-primary {
-            display: inline-block;
-            background-color: var(--color-secondary);
-            color: var(--color-text-dark);
-            padding: 15px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: clamp(1em, 2vw, 1.2em);
-            transition: all 0.3s ease;
-            box-shadow: var(--box-shadow);
-            transform: translateY(0);
-            animation: pulseBtn 2s infinite;
-        }
-
-        .btn-primary:hover {
-            background-color: #f0c98f; /* Un poco más claro */
-            transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-            animation: none; /* Detiene la animación de pulso al pasar el ratón */
-        }
-
-        /* Contenedores de contenido */
-        /* Aseguramos que los elementos sean visibles por defecto y la animación solo añade el efecto */
-        .content-card, .testimonial-card, .offer-item, .price-box, .guarantee-box, .faq-item {
-            opacity: 1; /* Asegura visibilidad por defecto */
-            transform: translateY(0); /* Posición por defecto */
-        }
-
-
-        .content-card.fade-in, .testimonial-card.fade-in, .offer-item.fade-in, .price-box.fade-in, .guarantee-box.fade-in, .faq-item.fade-in {
-            /* No establecemos opacity: 0 aquí directamente para evitar que se queden invisibles */
-            animation: fadeInFromBottom 1s ease-out forwards;
-        }
-
-        .content-card {
-            background-color: var(--color-text-light);
-            padding: 30px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            margin: 30px auto;
-            text-align: left;
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.5s ease, box-shadow 0.5s ease;
-        }
-
-        .content-card:hover {
-             color: #cccccc; /* gris claro en hover */
-            transform: translateY(-8px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-        }
-
-        .content-card:hover h2,
-.content-card:hover h3,
-.content-card:hover p,
-.content-card:hover li,
-.content-card:hover span {
-    color: #cccccc;
-}
-
-
-        /* Listas de beneficios/características */
-        .benefit-list {
-            list-style: none;
-            padding: 0;
-            margin-top: 30px;
+        /*!sc*/
+        .ehRtkf {
             display: grid;
-            /* Aseguramos un mínimo de 250px para las columnas */
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-       .benefit-item {
-  display: flex;
-  align-items: flex-start;
-  text-align: left;
-  padding: 15px;
-  border-radius: var(--border-radius);
-  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro translúcido */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
-  overflow-wrap: break-word;
-  word-break: break-word;
-  line-height: 1.5;
-  font-size: clamp(0.9em, 1.8vw, 1em);
-  color: #ffffff; /* Asegura contraste del texto sobre fondo oscuro */
-}
-
-        .benefit-item:hover {
-            background-color: #f0f0f0;
-            transform: translateY(-3px);
-        }
-
-        .benefit-item::before {
-            content: '✓';
-            color: var(--color-primary);
-            font-size: 1.3em; /* Tamaño del checkmark ligeramente reducido */
-            margin-right: 12px; /* Margen derecho del checkmark ajustado */
-            font-weight: 700;
-            flex-shrink: 0;
-        }
-
-        /* Testimonios */
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-top: 40px;
-        }
-
-        .testimonial-card {
-            background-color: var(--color-text-light);
-            padding: 30px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            text-align: center;
             position: relative;
-            transition: transform 0.3s ease;
-        }
-
-.offer-item.fade-in img {
-    width: clamp(200px, 45vw, 260px);
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
-    display: block;
-    margin: 0 auto 5px; /* Espacio inferior reducido */
-}
-
-
-        .testimonial-card:hover {
-            transform: translateY(-8px);
-        }
-
-        .testimonial-quote {
-            font-style: italic;
-            margin-bottom: 20px;
-            color: var(--color-text-dark);
-            font-size: 1.1em;
-            position: relative;
-        }
-
-        .testimonial-quote::before, .testimonial-quote::after {
-            content: '“';
-            font-size: 3em;
-            color: var(--color-secondary);
-            position: absolute;
-            top: 0;
-            left: -15px;
-            opacity: 0.6;
-        }
-        .testimonial-quote::after {
-            content: '”';
-            left: unset;
-            right: -15px;
-        }
-
-
-        .testimonial-author {
-            font-weight: 600;
-            color: var(--color-primary);
-            margin-top: 15px;
-        }
-        .testimonial-rating {
-            color: var(--color-secondary);
-            font-size: 1.2em;
-            margin-bottom: 10px;
-        }
-
-
-        /* Sección de Oferta */
-        .offer-stack {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-            margin-top: 40px;
-        }
-
-        .offer-item {
-            background-color: var(--color-text-light);
-            padding: 25px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            text-align: center;
-            width: 100%;
-            max-width: 500px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .offer-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        .offer-item img {
-            max-width: 180px;
-            height: auto;
-            margin-bottom: 15px;
-            /* No bordes, fondo ni sombra, como se solicitó */
-        }
-
-        .offer-item h3 {
-            color: var(--color-primary);
-            margin-top: 10px;
-            margin-bottom: 10px;
-            font-size: 1.6em;
-        }
-
-        .offer-item p {
-            font-size: 1em;
-            color: var(--color-text-dark);
-            text-align: center;
-        }
-
-        .price-box {
-            background-color: var(--color-primary);
-            color: var(--color-text-light);
-            padding: 25px 40px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            margin-top: 40px;
-            width: fit-content;
-            margin-left: auto;
-            margin-right: auto;
-            animation: bounceIn 1s ease-out;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .price-box .old-price {
-            text-decoration: line-through;
-            font-size: 1.2em;
-            opacity: 0.8;
-            margin-right: 10px;
-        }
-        .price-box .new-price {
-            font-size: 2.8em;
-            font-weight: 700;
-            display: block;
-            line-height: 1;
-        }
-        .price-box .currency {
-            font-size: 0.6em;
-            vertical-align: super;
-        }
-        .price-box .price-note {
-            font-size: 0.9em;
-            margin-top: 10px;
-        }
-
-        /* Garantía */
-        .guarantee-box {
-            background-color: var(--color-text-light);
-            border: 2px solid var(--color-primary);
-            padding: 30px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            margin: 40px auto;
-            max-width: 700px;
-            display: flex;
-            align-items: center;
-            gap: 25px;
-            animation: slideInLeft 1s ease-out;
-        }
-        .guarantee-box i { /* Ícono de garantía */
-            font-size: 3em;
-            color: var(--color-primary);
-            flex-shrink: 0;
-        }
-        .guarantee-box p {
-            text-align: left;
-            margin: 0;
-            font-size: 1.1em;
-        }
-
-        /* Preguntas Frecuentes (FAQ) */
-        .faq-item {
-            background-color: var(--color-text-light);
-            padding: 20px 25px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            margin-bottom: 15px;
-            text-align: left;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .faq-item:hover {
-            background-color: #f5f5f5;
-            transform: translateY(-3px);
-        }
-
-        .faq-question {
-            font-weight: 600;
-            color: var(--color-primary);
-            font-size: 1.1em;
-            display: flex;
             justify-content: space-between;
-            align-items: center;
+            grid-template-columns: repeat(12, 1fr);
+            column-gap: 20px;
+            padding-top: 10px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+            background-image: none;
+            column-gap: unset !important;
         }
 
-        .faq-question::after {
-            content: '+';
-            font-size: 1.5em;
-            transition: transform 0.3s ease;
+        /*!sc*/
+        @media only screen and (max-width: 800px) {
+            .ehRtkf {
+                padding-top: 5px;
+                padding-right: 5px;
+                padding-bottom: 5px;
+                padding-left: 5px;
+            }
         }
 
-        .faq-item.active .faq-question::after {
-            transform: rotate(45deg);
+        /*!sc*/
+        @media only screen and (max-width: 800px) {
+            .ehRtkf {
+                display: flex;
+                flex-direction: column;
+                grid-template-columns: auto;
+                background-image: none;
+            }
         }
 
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease-out;
-            padding-top: 0;
-            color: var(--color-text-dark);
-            font-size: 0.95em;
+        /*!sc*/
+        data-styled.g262[id="sc-tmKvc"] {
+            content: "ehRtkf,"
         }
 
-        .faq-item.active .faq-answer {
-            max-height: 200px; /* Adjust as needed */
-            padding-top: 15px;
-        }
-
-        /* Muestra del Ebook */
-        .ebook-preview-carousel {
-            position: relative;
-            width: 100%;
-            max-width: 700px;
-            margin: 40px auto;
-            height: 450px; /* Altura fija para el carrusel */
-            overflow: hidden;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            background-color: var(--color-text-light);
+        /*!sc*/
+        .dgXCiJ {
             display: flex;
-            align-items: center;
-            justify-content: center;
+            position: relative;
+            background-image: none;
         }
 
-        .ebook-page {
+        /*!sc*/
+        @media only screen and (max-width: 800px) {
+            .dgXCiJ {
+                padding-top: 5px;
+                padding-right: 5px;
+                padding-bottom: 5px;
+                padding-left: 5px;
+            }
+        }
+
+        /*!sc*/
+        @media only screen and (max-width: 800px) {
+            .dgXCiJ {
+                background-image: none;
+            }
+        }
+
+        /*!sc*/
+        data-styled.g270[id="sc-iLnaUn"] {
+            content: "dgXCiJ,"
+        }
+
+        /*!sc*/
+        .hdDbjo {
+            max-width: 100%;
+            width: 100%;
+            margin: auto;
+        }
+
+        /*!sc*/
+        @media only screen and (max-width: 800px) {
+            .hdDbjo {
+                max-width: initial;
+            }
+        }
+
+        /*!sc*/
+        data-styled.g271[id="sc-fOSqom"] {
+            content: "hdDbjo,"
+        }
+
+        /*!sc*/
+        .hHzYbV {
             position: absolute;
+            z-index: 0;
+            height: 100%;
+            width: 100%;
             top: 0;
             left: 0;
+            z-index: -1;
+            filter: blur(0px);
+            background-image: none;
+        }
+
+        /*!sc*/
+        @media only screen and (max-width: 800px) {
+            .hHzYbV {
+                background-image: none;
+            }
+        }
+
+        /*!sc*/
+        data-styled.g293[id="sc-dLoHQq"] {
+            content: "hHzYbV,"
+        }
+
+        /*!sc*/
+        .iyxoUZ {
+            position: relative;
             width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-            background-color: var(--color-text-light); /* Fondo blanco para las páginas */
         }
 
-        .ebook-page.active {
-            opacity: 1;
+        /*!sc*/
+        data-styled.g297[id="sc-cOfyym"] {
+            content: "iyxoUZ,"
         }
 
-        .ebook-page img {
-            max-width: 90%;
-            max-height: 90%;
-            object-fit: contain;
-            /* No bordes, fondo ni sombra */
-        }
-
-        /* Footer */
-        .footer {
-            background-color: var(--color-text-dark);
-            color: var(--color-text-light);
-            padding: 30px 20px;
-            font-size: 0.9em;
+        /*!sc*/
+        .cFJbpF {
+            min-height: 20px;
             text-align: center;
         }
 
-        .footer a {
-            color: var(--color-secondary);
+        /*!sc*/
+        data-styled.g431[id="sc-dbQVDs"] {
+            content: "cFJbpF,"
+        }
+
+        /*!sc*/
+        html {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            overscroll-behavior-x: none;
+        }
+
+        /*!sc*/
+        body {
+            margin: 0;
+        }
+
+        /*!sc*/
+        a {
             text-decoration: none;
-            transition: color 0.3s ease;
         }
 
-        .footer a:hover {
-            color: var(--color-primary);
+        /*!sc*/
+        p span>a[href^="tel:"] {
+            color: inherit;
         }
 
-        /* Animaciones */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        /*!sc*/
+        p {
+            margin: 0;
         }
 
-        @keyframes fadeInScale {
-            from { opacity: 0; transform: scale(0.9); }
-            to { opacity: 1; transform: scale(1); }
-        }
-        @keyframes fadeInFromTop {
-            from { opacity: 0; transform: translateY(-50px); }
-            to { opacity: 1; transform: translateY(0); }
+        /*!sc*/
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
         }
 
-
-        @keyframes pulseBtn {
-            0% { transform: scale(1); box-shadow: var(--box-shadow); }
-            50% { transform: scale(1.03); box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25); }
-            100% { transform: scale(1); box-shadow: var(--box-shadow); }
+        /*!sc*/
+        * {
+            -webkit-font-smoothing: antialiased;
         }
 
-        @keyframes bounceIn {
-            0% { opacity: 0; transform: scale(0.3); }
-            50% { opacity: 1; transform: scale(1.05); }
-            70% { transform: scale(0.9); }
-            100% { transform: scale(1); }
+        /*!sc*/
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin: 0;
+            font-weight: normal;
         }
 
-        @keyframes slideInLeft {
-            from { opacity: 0; transform: translateX(-100px); }
-            to { opacity: 1; transform: translateX(0); }
+        /*!sc*/
+        section h1 {
+            margin: 0;
         }
 
-        @keyframes floatBubble {
-            0% { transform: translate(0, 0) scale(1); }
-            25% { transform: translate(20px, 15px) scale(1.05); }
-            50% { transform: translate(0, 30px) scale(1); }
-            75% { transform: translate(-20px, 15px) scale(0.95); }
-            100% { transform: translate(0, 0) scale(1); }
+        /*!sc*/
+        button,
+        input {
+            margin: 0;
+            font-family: unset;
         }
 
-        @keyframes fadeInFromBottom {
-            from { opacity: 0; transform: translateY(50px); }
-            to { opacity: 1; transform: translateY(0); }
+        /*!sc*/
+        button {
+            border-style: none;
         }
 
-        /* Media Queries para Responsividad */
-        @media (max-width: 768px) {
-            .section {
-                padding: 40px 0;
-            }
+        /*!sc*/
+        ul {
+            margin: 0;
+        }
 
-            h1 {
-                font-size: 2.2em;
-            }
+        /*!sc*/
+        .fixed {
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            width: 320px;
+            height: 50px;
+            background: red;
+            -webkit-backface-visibility: hidden;
+        }
 
-            h2 {
-                font-size: 1.8em;
-            }
+        /*!sc*/
+        data-styled.g507[id="sc-global-dnbldJ1"] {
+            content: "sc-global-dnbldJ1,"
+        }
 
-            .hero {
-                min-height: 70vh;
-                padding: 60px 20px;
-            }
+        /*!sc*/
+        .cGuMrp {
+            position: relative;
+            text-align: initial;
+            margin: 0px 0px 0px 0px;
+        }
 
-            .hero-book-image {
-                max-width: 180px;
-            }
-
-            .btn-primary {
-                padding: 12px 25px;
-                font-size: 1em;
-            }
-
-            .content-card {
-                padding: 20px;
-                margin: 20px auto;
-            }
-
-            .benefit-list {
-                grid-template-columns: 1fr;
-            }
-
-            .testimonials-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .offer-item {
-                max-width: 90%;
-            }
-
-            .guarantee-box {
-                flex-direction: column;
-                text-align: center;
-                gap: 15px;
-                padding: 20px;
-            }
-            .guarantee-box i {
-                margin-bottom: 10px;
-            }
-            .guarantee-box p {
-                text-align: center;
-            }
-
-            .price-box {
-                padding: 20px 30px;
-            }
-            .price-box .new-price {
-                font-size: 2.2em;
-            }
-            .ebook-preview-carousel {
-                height: 300px; /* Ajuste para móviles */
+        /*!sc*/
+        @media only screen and (max-width: 800px) {
+            .cGuMrp {
+                margin-top: 0px;
+                margin-right: 0px;
+                margin-bottom: 0px;
+                margin-left: 0px;
             }
         }
 
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 1.8em;
-            }
-            h2 {
-                font-size: 1.5em;
-            }
-            p {
-                font-size: 0.9em;
-            }
-            .btn-primary {
-                font-size: 0.9em;
-            }
+        /*!sc*/
+        data-styled.g516[id="sc-fQMQIz"] {
+            content: "cGuMrp,"
+        }
+
+        /*!sc*/
+        .hYrWzh {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /*!sc*/
+        data-styled.g562[id="sc-knFxCI"] {
+            content: "hYrWzh,"
+        }
+
+        /*!sc*/
+    </style>
+    <link data-react-helmet="true" rel="canonical" href="" />
+    <link rel="stylesheet" href="https://d3fit27i5nzkqh.cloudfront.net/assets/css/optimizedFontAwesome.css" />
+    <style>
+        .fal {
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-font-smoothing: antialiased;
+            display: var(--fa-display, inline-block);
+            font-style: normal;
+            font-variant: normal;
+            line-height: 1;
+            text-rendering: auto;
+        }
+
+        .fal {
+            font-family: "Font Awesome 6 Pro";
+            font-weight: 300;
+        }
+
+        .fa-chevron-circle-left:before {
+            content: "\f137";
+        }
+
+        .fa-chevron-circle-right:before {
+            content: "\f138";
+        }
+
+        .fas {
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-font-smoothing: antialiased;
+            display: var(--fa-display, inline-block);
+            font-style: normal;
+            font-variant: normal;
+            line-height: 1;
+            text-rendering: auto;
+        }
+
+        .fas {
+            font-family: "Font Awesome 6 Pro";
+            font-weight: 900;
+        }
+
+        .fa-chevron-down:before {
+            content: "\f078";
+        }
+
+        .fa-chevron-left:before {
+            content: "\f053";
+        }
+
+        .fad.fa-chevron-right:after {
+            content: "\f054\f054";
+        }
+
+        .fad {
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-font-smoothing: antialiased;
+            display: var(--fa-display, inline-block);
+            font-style: normal;
+            font-variant: normal;
+            line-height: 1;
+            text-rendering: auto;
+        }
+
+        .fad {
+            position: relative;
+            font-family: "Font Awesome 6 Duotone";
+            font-weight: 900;
+            letter-spacing: normal;
+        }
+
+        .fad:before {
+            position: absolute;
+            color: var(--fa-primary-color, inherit);
+            opacity: var(--fa-primary-opacity, 1);
+        }
+
+        .fad:after {
+            color: var(--fa-secondary-color, inherit);
+        }
+
+        .fad:after {
+            opacity: var(--fa-secondary-opacity, 0.4);
+        }
+
+        .fa-chevron-right:before {
+            content: "\f054";
+        }
+
+        .fa-chevron-up:before {
+            content: "\f077";
+        }
+
+        .fa-circle:before {
+            content: "\f111";
+        }
+
+        .far {
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-font-smoothing: antialiased;
+            display: var(--fa-display, inline-block);
+            font-style: normal;
+            font-variant: normal;
+            line-height: 1;
+            text-rendering: auto;
+        }
+
+        .far {
+            font-family: "Font Awesome 6 Pro";
+            font-weight: 400;
+        }
+
+        .fa-clock:before {
+            content: "\f017";
+        }
+
+        .fa-eye:before {
+            content: "\f06e";
+        }
+
+        .fa-eye-slash:before {
+            content: "\f070";
+        }
+
+        .fa {
+            font-family: var(--fa-style-family, "Font Awesome 6 Pro");
+            font-weight: var(--fa-style, 900);
+        }
+
+        .fa {
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-font-smoothing: antialiased;
+            display: var(--fa-display, inline-block);
+            font-style: normal;
+            font-variant: normal;
+            line-height: 1;
+            text-rendering: auto;
+        }
+
+        .fa-times:before {
+            content: "\f00d";
         }
     </style>
 </head>
+
 <body>
+    <div id="app">
+        <div class="sc-knFxCI hYrWzh">
+            <div class="sc-cOfyym iyxoUZ">
+                <div class="sc-dLoHQq hHzYbV"></div>
+                <div class="sc-fQMQIz cGuMrp">
+                    <section
+                        style="background-size:initial;background-position:50% 50%;background-repeat:no-repeat;background-attachment:initial"
+                        id="section-4eb3f4c9" class="sc-iLnaUn dgXCiJ">
+                        <div width="100%" class="sc-fOSqom hdDbjo">
+                            <div class="sc-fQMQIz cGuMrp">
+                                <div style="background-size:initial;background-position:50% 50%;background-repeat:repeat;background-attachment:initial"
+                                    id="row-4ba261c9" class="sc-tmKvc ehRtkf">
+                                    <div size="12" class="sc-ajmIN kjsFmu">
+                                        <div class="sc-fQMQIz cGuMrp">
+                                            <div id="rawhtml-ad0c6a25" class="sc-dbQVDs cFJbpF">
+                                                <!DOCTYPE html>
+                                                <html lang="es">
 
-    <div class="section hero">
-        <div class="container">
-            <img src="Mockup Ebook Principal.png" alt="Portada de Manifiesta con Ciencia" class="hero-book-image">
-            <h1>MÁS QUE AFIRMACIONES</h1>
-            <p class="hero-subtitle">La Clave que te Falta para Reprogramar tu Mente y Crear tu Realidad Deseada.</p>
-            <a href="https://pay.hotmart.com/L100515684I?checkoutMode=10" class="btn-primary">¡Quiero Comprobar el método en mí!</a>
-        </div>
-    </div>
+                                                <head>
+                                                    <link rel="icon" type="image/x-icon"
+                                                        href="https://d2543nuuc0wvdg.cloudfront.net/favicon.ico">
+                                                    <meta charset="UTF-8">
+                                                    <meta name="viewport"
+                                                        content="width=device-width, initial-scale=1.0">
+                                                    <title>Merezco la Vida de Mis Sueños - La Abu</title>
+                                                    <script src="https://cdn.tailwindcss.com"></script>
+                                                    <link
+                                                        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap"
+                                                        rel="stylesheet">
+                                                    <style>
+                                                        body {
+                                                            font-family: 'Inter', sans-serif;
+                                                        }
 
-    <div class="section">
-        <div class="container">
-            <h2>¿Por qué tus métodos de manifestación no están funcionando?</h2>
-            <div class="content-card fade-in">
-                <p>Durante mucho tiempo repetiste afirmaciones, escribiste deseos y visualizaste todos los días. Hacías todo lo que se supone que debías hacer para manifestar. Pero nada cambiaba.</p>
-                <p>El dinero no llegaba. Las relaciones no mejoraban. Y en el fondo, comenzaste a sentir que quizá la manifestación no era para ti.</p>
-                <p>Hasta que entendiste que el problema no era el método, era cómo lo estabas usando.</p>
-                <p>No basta con desear algo. Si tu mente está llena de creencias limitantes, si tu cuerpo vibra en miedo, si tus decisiones no están alineadas, no estás manifestando: estás esperando con ansiedad.</p>
+                                                        .font-playfair {
+                                                            font-family: 'Playfair Display', serif;
+                                                        }
+
+                                                        .gradient-text {
+                                                            background: linear-gradient(to right, #36A47F, #2C8C69);
+                                                            /* Jade green gradient */
+                                                            -webkit-background-clip: text;
+                                                            -webkit-text-fill-color: transparent;
+                                                        }
+
+                                                        .cta-button {
+                                                            transition: transform 0.3s ease, box-shadow 0.3s ease;
+                                                            display: inline-block;
+                                                            /* Ensure proper sizing */
+                                                            width: auto;
+                                                            /* Default width */
+                                                        }
+
+                                                        .cta-button:hover {
+                                                            transform: translateY(-3px);
+                                                            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+                                                        }
+
+                                                        @keyframes slowPulse {
+
+                                                            0%,
+                                                            100% {
+                                                                transform: scale(1);
+                                                            }
+
+                                                            50% {
+                                                                transform: scale(1.03);
+                                                            }
+                                                        }
+
+                                                        .cta-button-animated {
+                                                            animation: slowPulse 2.5s infinite ease-in-out;
+                                                        }
+
+                                                        .testimonial-card {
+                                                            transition: transform 0.3s ease;
+                                                        }
+
+                                                        .testimonial-card:hover {
+                                                            transform: scale(1.03);
+                                                        }
+
+                                                        .faq-item {
+                                                            border-bottom: 1px solid #e5e7eb;
+                                                        }
+
+                                                        .faq-item:last-child {
+                                                            border-bottom: none;
+                                                        }
+
+                                                        .fade-in-section {
+                                                            opacity: 0;
+                                                            transform: translateY(20px);
+                                                            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+                                                        }
+
+                                                        .fade-in-section.is-visible {
+                                                            opacity: 1;
+                                                            transform: translateY(0);
+                                                        }
+
+                                                        .bullet-box {
+                                                            background-color: #F0FAF5;
+                                                            /* Lighter jade-like background */
+                                                            border: 1px solid #BFEDD9;
+                                                            /* Lighter jade-like border */
+                                                            border-radius: 0.75rem;
+                                                            padding: 1.5rem;
+                                                            text-align: center;
+                                                            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+                                                        }
+
+                                                        .bullet-box svg {
+                                                            margin-bottom: 0.75rem;
+                                                            color: #36A47F;
+                                                            /* Jade green icon color */
+                                                        }
+
+                                                        /* Offer stack item styling */
+                                                        .offer-item {
+                                                            background-color: rgba(255, 255, 255, 0.7);
+                                                            /* Slightly more opaque white */
+                                                            border: 1px solid #82D1B0;
+                                                            /* Light jade green border */
+                                                            border-radius: 0.5rem;
+                                                            /* rounded-md */
+                                                            padding: 0.75rem 1rem;
+                                                            /* p-3 md:p-4 */
+                                                            margin-bottom: 0.75rem;
+                                                            /* mb-3 */
+                                                            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+                                                            display: flex;
+                                                            align-items: center;
+                                                        }
+
+                                                        .offer-item svg {
+                                                            flex-shrink: 0;
+                                                            margin-right: 0.75rem;
+                                                            /* mr-3 */
+                                                        }
+
+                                                        /* Responsive adjustments for buttons */
+                                                        @media (max-width: 640px) {
+                                                            .cta-button {
+                                                                padding-left: 1.5rem;
+                                                                /* px-6 */
+                                                                padding-right: 1.5rem;
+                                                                /* px-6 */
+                                                                font-size: 1rem;
+                                                                /* text-base for smaller screens */
+                                                                width: 90%;
+                                                                /* Make buttons take more width on mobile */
+                                                                max-width: 320px;
+                                                                /* Max width to prevent them being too wide */
+                                                                margin-left: auto;
+                                                                margin-right: auto;
+                                                                display: block;
+                                                                /* Make them block to center with margin auto */
+                                                            }
+
+                                                            .cta-button-wrapper p {
+                                                                /* Target the subtext specifically */
+                                                                font-size: 0.75rem;
+                                                                /* text-xs */
+                                                            }
+                                                        }
+                                                    </style>
+                                                </head>
+
+                                                <body class="bg-slate-50 text-gray-800">
+
+                                                    <div class="container mx-auto max-w-4xl">
+
+                                                        <header class="text-center py-12 md:py-20 px-4 fade-in-section"
+                                                            style="background: linear-gradient(to bottom, #E8F5E9, #F5FBEF);">
+                                                            <h1
+                                                                class="font-playfair text-4xl md:text-6xl font-bold mb-4">
+                                                                ¿Sientes que hay <span class="gradient-text">una vida
+                                                                    mejor esperándote</span>, pero no sabes cómo
+                                                                alcanzarla?
+                                                            </h1>
+                                                            <p class="text-lg md:text-2xl text-gray-700 mb-8">
+                                                                Descubre el secreto ancestral para activar tu <span
+                                                                    class="font-semibold text-emerald-700">Subconsciente
+                                                                    Fértil</span> y convertir tus pensamientos en una realidad próspera que resuene con lo que MERECES.
+                                                            </p>
+
+                                                            <div class="cta-button-wrapper mb-6">
+                                                                <a href="https://go.hotmart.com/B100609339P?ap=50eb"
+                                                                    class="cta-button cta-button-animated bg-gradient-to-r from-green-600 to-emerald-800 hover:from-green-700 hover:to-emerald-900 text-white font-bold py-4 px-10 rounded-lg text-xl shadow-lg">
+                                                                    ¡SÍ, QUIERO MANIFESTAR LA VIDA DE MIS SUEÑOS!
+                                                                </a>
+                                                            </div>
+                                                            <p class="mt-4 text-sm text-gray-600"
+                                                                style="width: 75%; margin: 0 auto;">Obtén tu acceso
+                                                                inmediato al libro electrónico por solo $14 USD</p>
+                                                            <div class="mt-10">
+                                                                <img src="https://d1yei2z3i6k35z.cloudfront.net/1907881/682688611aa02_ChatGPTImage14may202505_28_44p.m..png"
+                                                                    alt="Mockup Merezco la Vida de Mis Sueños"
+                                                                    class="rounded-lg shadow-xl mx-auto max-w-lg w-full">
+                                                            </div>
+                                                        </header>
+
+                                                        <section
+                                                            class="py-12 md:py-16 bg-white rounded-xl shadow-xl mx-4 md:mx-0 my-10 fade-in-section">
+                                                            <div class="px-6 md:px-12 text-center">
+                                                                <h2
+                                                                    class="font-playfair text-3xl md:text-4xl font-bold mb-10 text-emerald-700">
+                                                                    ¿Te Suena Familiar Alguna de Estas Situaciones?</h2>
+                                                                <div
+                                                                    class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+                                                                    <div class="bullet-box">
+                                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                                            class="h-12 w-12 mx-auto" fill="none"
+                                                                            viewBox="0 0 24 24" stroke="currentColor"
+                                                                            stroke-width="2">
+                                                                            <path stroke-linecap="round"
+                                                                                stroke-linejoin="round"
+                                                                                d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                                        </svg>
+                                                                        <p class="text-gray-700 text-lg">Sientes un
+                                                                            vacío constante, como si algo faltara para
+                                                                            ser plenamente feliz.</p>
+                                                                    </div>
+                                                                    <div class="bullet-box">
+                                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                                            class="h-12 w-12 mx-auto" fill="none"
+                                                                            viewBox="0 0 24 24" stroke="currentColor"
+                                                                            stroke-width="2">
+                                                                            <path stroke-linecap="round"
+                                                                                stroke-linejoin="round"
+                                                                                d="M9.663 17h4.673M21 12a9 9 0 11-18 0 9 9 0 0118 0zM17.606 7.594A4.501 4.501 0 0012 6c-1.626 0-3.09.86-3.968 2.182M12 18a6 6 0 006-6H6a6 6 0 006 6z" />
+                                                                        </svg>
+                                                                        <p class="text-gray-700 text-lg">Tus sueños más
+                                                                            grandes parecen lejanos, casi imposibles de
+                                                                            alcanzar.</p>
+                                                                    </div>
+                                                                    <div class="bullet-box">
+                                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                                            class="h-12 w-12 mx-auto" fill="none"
+                                                                            viewBox="0 0 24 24" stroke="currentColor"
+                                                                            stroke-width="2">
+                                                                            <path stroke-linecap="round"
+                                                                                stroke-linejoin="round"
+                                                                                d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                                                        </svg>
+                                                                        <p class="text-gray-700 text-lg">Te esfuerzas
+                                                                            día a día, pero la abundancia y la paz
+                                                                            interior se sienten esquivas.</p>
+                                                                    </div>
+                                                                    <div class="bullet-box">
+                                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                                            class="h-12 w-12 mx-auto" fill="none"
+                                                                            viewBox="0 0 24 24" stroke="currentColor"
+                                                                            stroke-width="2">
+                                                                            <path stroke-linecap="round"
+                                                                                stroke-linejoin="round"
+                                                                                d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />
+                                                                        </svg>
+                                                                        <p class="text-gray-700 text-lg">Las dudas y los
+                                                                            miedos sabotean tus intentos de crear un
+                                                                            cambio real.</p>
+                                                                    </div>
+                                                                    <div class="bullet-box md:col-span-2">
+                                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                                            class="h-12 w-12 mx-auto" fill="none"
+                                                                            viewBox="0 0 24 24" stroke="currentColor"
+                                                                            stroke-width="2">
+                                                                            <path stroke-linecap="round"
+                                                                                stroke-linejoin="round"
+                                                                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                                                            <path stroke-linecap="round"
+                                                                                stroke-linejoin="round"
+                                                                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                                                        </svg>
+                                                                        <p class="text-gray-700 text-lg">Anhelas una
+                                                                            conexión más profunda contigo misma y con el
+                                                                            universo, pero no sabes por dónde empezar.
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                                <p class="mt-10 text-xl text-gray-800 leading-relaxed">
+                                                                    Si dijiste que sí, <b>no estás sola.</b><br><br>
+                                                                    Muchas personas, como tú, han sentido esa
+                                                                    <b>desconexión.</b><br><br>
+                                                                    Pero hoy, tienes la <b>oportunidad</b> de aplicar la
+                                                                    sabiduría de la abu en tu vida para cambiarlo todo.
+                                                                </p>
+                                                            </div>
+                                                        </section>
+
+                                                    
+
+                                                        <section
+                                                            class="py-12 md:py-16 bg-white rounded-xl shadow-xl mx-4 md:mx-0 my-10 fade-in-section">
+                                                            <div class="px-6 md:px-12 text-center">
+                                                                <h2
+                                                                    class="font-playfair text-3xl md:text-4xl font-bold mb-2 text-emerald-700">
+                                                                    Te presento: "Merezco la Vida de Mis Sueños"</h2>
+                                                                <p class="text-xl text-gray-600 mb-6">La guía definitiva
+                                                                    para activar tu <span
+                                                                        class="font-semibold">Subconsciente
+                                                                        Fértil</span> y cosechar la vida que anhelas.
+                                                                </p>
+                                                                <div class="max-w-xl mx-auto mb-8">
+                                                                    <img src="https://d1yei2z3i6k35z.cloudfront.net/1907881/68251a2110fe7_ChatGPTImage14may202505_32_38p.m.1.png"
+                                                                        alt="Merezco la Vida de Mis Sueños"
+                                                                        class="mx-auto">
+                                                                </div>
+                                                                <p class="text-lg text-gray-700 mb-4 leading-relaxed">
+                                                                    Este no es solo un ebook, es la llave maestra que
+                                                                    has estado buscando. <br><br>
+                                                                    Porque gracias al <strong
+                                                                        class="text-emerald-700">"Jardín
+                                                                        Subconsciente"</strong> podrás reprogramar tus
+                                                                    emociones y creencias más profundas para transformar
+                                                                    tu vida.<br><br>
+                                                                    Y para eso, combinaremos principios de la <span
+                                                                        class="font-semibold">neuroplasticidad</span>
+                                                                    para convertir tu mente en un campo fértil donde tus
+                                                                    sueños no solo crecen, sino que florecen en
+                                                                    abundancia.<br><br>
+                                                                    Prepárate para desenterrar tu poder interior y ver
+                                                                    cómo tu vida se transforma en prosperidad real y
+                                                                    tangible.
+                                                                </p>
+                                                                <br>
+                                                                <div class="cta-button-wrapper">
+                                                                    <a href="https://go.hotmart.com/B100609339P?ap=50eb"
+                                                                        class="cta-button cta-button-animated bg-gradient-to-r from-green-600 to-emerald-800 hover:from-green-700 hover:to-emerald-900 text-white font-bold py-4 px-10 rounded-lg text-xl shadow-lg">
+                                                                        ¡SÍ, QUIERO LA VIDA DE MIS SUEÑOS!
+                                                                    </a>
+                                                                    <p class="mt-2 text-xs text-gray-500">Acceso
+                                                                        Inmediato en tu correo electrónico</p>
+                                                                </div>
+                                                            </div>
+                                                        </section>
+
+                                                        <section class="py-12 md:py-16 px-4 fade-in-section">
+                                                            <h2
+                                                                class="font-playfair text-3xl md:text-4xl font-bold text-center mb-10 text-emerald-700">
+                                                                ¿Qué Lograrás con "Merezco la Vida de Mis Sueños"?</h2>
+                                                            <div class="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+                                                                <div class="bg-green-50 p-6 rounded-lg shadow-md">
+                                                                    <h3
+                                                                        class="text-xl font-semibold text-emerald-700 mb-2">
+                                                                        Despertarás tu Poder Interior</h3>
+                                                                    <p class="text-gray-700">Conectarás con tu esencia y
+                                                                        activarás la capacidad innata de manifestar tus
+                                                                        deseos más profundos.</p>
+                                                                </div>
+                                                                <div class="bg-green-50 p-6 rounded-lg shadow-md">
+                                                                    <h3
+                                                                        class="text-xl font-semibold text-emerald-700 mb-2">
+                                                                        Transformarás Creencias Limitantes</h3>
+                                                                    <p class="text-gray-700">Identificarás y
+                                                                        reemplazarás los pensamientos que te frenan por
+                                                                        creencias que te impulsan hacia el éxito.</p>
+                                                                </div>
+                                                                <div class="bg-green-50 p-6 rounded-lg shadow-md">
+                                                                    <h3
+                                                                        class="text-xl font-semibold text-emerald-700 mb-2">
+                                                                        Cultivarás un Subconsciente Fértil</h3>
+                                                                    <p class="text-gray-700">Aprenderás a sembrar
+                                                                        intenciones claras y a nutrir tu mente para que
+                                                                        la abundancia florezca naturalmente.</p>
+                                                                </div>
+                                                                <div class="bg-green-50 p-6 rounded-lg shadow-md">
+                                                                    <h3
+                                                                        class="text-xl font-semibold text-emerald-700 mb-2">
+                                                                        Diseñarás la Vida que Anhelas</h3>
+                                                                    <p class="text-gray-700">Obtendrás herramientas
+                                                                        prácticas para atraer amor, prosperidad, salud y
+                                                                        felicidad a tu realidad.</p>
+                                                                </div>
+                                                                <div class="bg-green-50 p-6 rounded-lg shadow-md">
+                                                                    <h3
+                                                                        class="text-xl font-semibold text-emerald-700 mb-2">
+                                                                        Vivirás con Propósito y Alegría</h3>
+                                                                    <p class="text-gray-700">Descubrirás cómo alinear
+                                                                        tus acciones con tus verdaderos deseos para una
+                                                                        existencia plena y significativa.</p>
+                                                                </div>
+                                                                <div class="bg-green-50 p-6 rounded-lg shadow-md">
+                                                                    <h3
+                                                                        class="text-xl font-semibold text-emerald-700 mb-2">
+                                                                        Liberarás tu Potencial de Manifestación</h3>
+                                                                    <p class="text-gray-700">Entenderás y aplicarás las
+                                                                        leyes universales que rigen la creación de tu
+                                                                        realidad deseada.</p>
+                                                                </div>
+                                                            </div>
+                                                        </section>
+
+                                                        <section
+                                                            class="py-12 md:py-16 bg-white rounded-xl shadow-xl mx-4 md:mx-0 my-10 fade-in-section">
+                                                            <div class="px-6 md:px-12 text-center">
+                                                                <h2
+                                                                    class="font-playfair text-3xl md:text-4xl font-bold mb-10 text-emerald-700">
+                                                                    Y ESO NO ES TODO... ¡Recibe estos REGALOS MÁGICOS!
+                                                                </h2>
+                                                                <p class="text-xl text-gray-700 mb-10">Para acelerar tu
+                                                                    transformación, al adquirir "Merezco la Vida de Mis
+                                                                    Sueños" HOY, también recibirás GRATIS estos 3
+                                                                    poderosos bonos (Valorados en $63 USD):</p>
+
+                                                                <div class="space-y-8">
+                                                                    <div
+                                                                        class="bg-slate-100 p-6 rounded-lg shadow-md text-left md:flex md:items-center">
+                                                                        <img src="https://d1yei2z3i6k35z.cloudfront.net/1907881/682517e009772_1727187378-removebg-preview_2.webp"
+                                                                            alt="Mi Diario de Manifestación"
+                                                                            class="rounded-md md:mr-6 mb-4 md:mb-0 w-full md:w-1/4 object-cover">
+                                                                        <div>
+                                                                            <h3
+                                                                                class="text-2xl font-semibold text-emerald-700 mb-2">
+                                                                                REGALO #1: "Mi Diario de Manifestación"
+                                                                            </h3>
+                                                                            <p class="text-gray-700 mb-2">Aprende a
+                                                                                cultivar tus sueños diariamente en un
+                                                                                espacio íntimo y mágico que te conectará
+                                                                                con tu poder interior, haciendo que cada
+                                                                                día sea una oportunidad para manifestar
+                                                                                lo que más deseas.</p>
+                                                                            <p class="text-gray-600 font-bold">VALOR:
+                                                                                <span class="line-through">$17
+                                                                                    USD</span> - ¡HOY GRATIS!</p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div
+                                                                        class="bg-slate-100 p-6 rounded-lg shadow-md text-left md:flex md:items-center">
+                                                                        <img src="https://d1yei2z3i6k35z.cloudfront.net/1907881/682517e00966f_1727186316-removebg-preview_1.webp"
+                                                                            alt="Los Secretos de los Sonidos Mágicos"
+                                                                            class="rounded-md md:mr-6 mb-4 md:mb-0 w-full md:w-1/4 object-cover">
+                                                                        <div>
+                                                                            <h3
+                                                                                class="text-2xl font-semibold text-emerald-700 mb-2">
+                                                                                REGALO #2: "Los Secretos de los Sonidos
+                                                                                Mágicos"</h3>
+                                                                            <p class="text-gray-700 mb-2">Descubre cómo
+                                                                                ciertos sonidos pueden abrir puertas a
+                                                                                nuevas posibilidades en tu vida y cómo
+                                                                                utilizarlos para transformar tu realidad
+                                                                                y manifestar tus sueños más profundos.
+                                                                            </p>
+                                                                            <p class="text-gray-600 font-bold">VALOR:
+                                                                                <span class="line-through">$19
+                                                                                    USD</span> - ¡HOY GRATIS!</p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div
+                                                                        class="bg-slate-100 p-6 rounded-lg shadow-md text-left md:flex md:items-center">
+                                                                        <img src="https://d1yei2z3i6k35z.cloudfront.net/1907881/682517e007210_1727187846-removebg-preview_1.webp"
+                                                                            alt="Números Mágicos para una Vida Abundante"
+                                                                            class="rounded-md md:mr-6 mb-4 md:mb-0 w-full md:w-1/4 object-cover">
+                                                                        <div>
+                                                                            <h3
+                                                                                class="text-2xl font-semibold text-emerald-700 mb-2">
+                                                                                REGALO #3: "Números Mágicos para una
+                                                                                Vida Abundante"</h3>
+                                                                            <p class="text-gray-700 mb-2">Domina el
+                                                                                poder de los códigos sagrados y la
+                                                                                numerología para activar energías de
+                                                                                abundancia, superación y transformación,
+                                                                                usando simples secuencias numéricas.</p>
+                                                                            <p class="text-gray-600 font-bold">VALOR:
+                                                                                <span class="line-through">$27
+                                                                                    USD</span> - ¡HOY GRATIS!</p>
+
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                </div>
+                                                                <br><br>
+                                                                <div class="cta-button-wrapper">
+                                                                    <a href="https://go.hotmart.com/B100609339P?ap=50eb"
+                                                                        class="cta-button cta-button-animated bg-gradient-to-r from-green-600 to-emerald-800 hover:from-green-700 hover:to-emerald-900 text-white font-bold py-4 px-10 rounded-lg text-xl shadow-lg">
+                                                                        ¡SÍ, QUIERO LA VIDA DE MIS SUEÑOS!
+                                                                    </a>
+                                                                    <p class="mt-2 text-xs text-gray-500">Acceso
+                                                                        Inmediato en tu correo electrónico</p>
+                                                                </div>
+                                                            </div>
+
+                                                        </section>
+
+                                                        <section class="py-12 md:py-16 px-4 fade-in-section">
+                                                            <h2
+                                                                class="font-playfair text-3xl md:text-4xl font-bold text-center mb-10 text-emerald-700">
+                                                                Ellas Ya Están Transformando Sus Vidas...</h2>
+                                                            <div
+                                                                class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+                                                                <div
+                                                                    class="testimonial-card bg-white p-2 rounded-lg shadow-lg">
+                                                                    <img src="https://static-media.hotmart.com/92YW8_j2kIxZJaca97IxdkUIkfg=/filters:quality(100)/klickart-prod/uploads/media/file/8452989/whatsapp_image_2024-09-23_at_15.16.20.jpeg"
+                                                                        alt="Testimonio Imagen 1"
+                                                                        class="rounded-md w-full h-auto object-cover">
+                                                                </div>
+                                                                <div
+                                                                    class="testimonial-card bg-white p-2 rounded-lg shadow-lg">
+                                                                    <img src="https://static-media.hotmart.com/Nz7ZFkXJZw59FZ21QP_vAF1nJp8=/filters:quality(100)/klickart-prod/uploads/media/file/8452988/whatsapp_image_2024-09-23_at_15.13.29.jpeg"
+                                                                        alt="Testimonio Imagen 2"
+                                                                        class="rounded-md w-full h-auto object-cover">
+                                                                </div>
+                                                                <div
+                                                                    class="testimonial-card bg-white p-2 rounded-lg shadow-lg">
+                                                                    <img src="https://static-media.hotmart.com/VVIE40rUm_187u86V_qRiFcaXpI=/filters:quality(100)/klickart-prod/uploads/media/file/8452987/whatsapp_image_2024-09-23_at_15.10.37.jpeg"
+                                                                        alt="Testimonio Imagen 3"
+                                                                        class="rounded-md w-full h-auto object-cover">
+                                                                </div>
+                                                                <div
+                                                                    class="testimonial-card bg-white p-2 rounded-lg shadow-lg">
+                                                                    <img src="https://static-media.hotmart.com/orE7Wte8Gja7o3RU9QMj9ypMZnA=/filters:quality(100)/klickart-prod/uploads/media/file/8452986/whatsapp_image_2024-09-23_at_15.07.12.jpeg"
+                                                                        alt="Testimonio Imagen 4"
+                                                                        class="rounded-md w-full h-auto object-cover">
+                                                                </div>
+                                                                <div
+                                                                    class="testimonial-card bg-white p-2 rounded-lg shadow-lg">
+                                                                    <img src="https://static-media.hotmart.com/LDdF_sqlz7U2iNae-cIESU6iHxk=/filters:quality(100)/klickart-prod/uploads/media/file/8453178/whatsapp_image_2024-09-23_at_15.35.24_(1).jpeg"
+                                                                        alt="Testimonio Imagen 5"
+                                                                        class="rounded-md w-full h-auto object-cover">
+                                                                </div>
+                                                                <div
+                                                                    class="testimonial-card bg-white p-2 rounded-lg shadow-lg">
+                                                                    <img src="https://static-media.hotmart.com/Ym336KR7bd0oFyKg5c1CvaF4BoM=/filters:quality(100)/klickart-prod/uploads/media/file/8453180/whatsapp_image_2024-09-23_at_15.35.24.jpeg"
+                                                                        alt="Testimonio Imagen 6"
+                                                                        class="rounded-md w-full h-auto object-cover">
+                                                                </div>
+                                                            </div>
+                                                        </section>
+
+                                                        <section id="oferta"
+                                                            class="py-12 md:py-20 bg-gradient-to-br from-green-50 via-emerald-50 to-lime-50 text-gray-800 rounded-xl shadow-2xl mx-4 md:mx-0 my-10 fade-in-section">
+                                                            <div class="px-6 md:px-12 text-center">
+                                                                <h2
+                                                                    class="font-playfair text-4xl md:text-5xl font-bold mb-8 text-emerald-700">
+                                                                    ¡TODO ESTO PUEDE SER TUYO HOY!</h2>
+                                                                <div class="mb-8">
+                                                                    <img src="https://d1yei2z3i6k35z.cloudfront.net/1907881/682517e00db2e_banners_22_1.webp"
+                                                                        alt="Mockup Oferta Merezco la Vida de Mis Sueños"
+                                                                        style="width: 450px; margin: 0 auto; margin-top: -45px; margin-bottom: -45px;"
+                                                                        class="max-w-full h-auto sm:max-w-md md:max-w-lg">
+                                                                </div>
+                                                                <div
+                                                                    class="bg-white/60 backdrop-blur-md p-6 md:p-8 rounded-lg max-w-2xl mx-auto shadow-xl border border-emerald-300">
+                                                                    <div class="space-y-3 text-left">
+                                                                        <div class="offer-item">
+                                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                class="h-6 w-6 text-green-600"
+                                                                                fill="none" viewBox="0 0 24 24"
+                                                                                stroke="currentColor" stroke-width="2">
+                                                                                <path stroke-linecap="round"
+                                                                                    stroke-linejoin="round"
+                                                                                    d="M5 13l4 4L19 7" />
+                                                                            </svg>
+                                                                            <div>
+                                                                                <p
+                                                                                    class="text-lg font-medium text-gray-800">
+                                                                                    Ebook "Merezco la Vida de Mis
+                                                                                    Sueños"</p>
+                                                                                <p class="text-sm text-gray-600">(Valor
+                                                                                    $14 USD)</p>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="offer-item">
+                                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                class="h-6 w-6 text-green-600"
+                                                                                fill="none" viewBox="0 0 24 24"
+                                                                                stroke="currentColor" stroke-width="2">
+                                                                                <path stroke-linecap="round"
+                                                                                    stroke-linejoin="round"
+                                                                                    d="M5 13l4 4L19 7" />
+                                                                            </svg>
+                                                                            <div>
+                                                                                <p
+                                                                                    class="text-lg font-medium text-gray-800">
+                                                                                    REGALO #1: "Mi Diario de
+                                                                                    Manifestación"</p>
+                                                                                <p class="text-sm text-gray-600">(Valor
+                                                                                    $17 USD)</p>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="offer-item">
+                                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                class="h-6 w-6 text-green-600"
+                                                                                fill="none" viewBox="0 0 24 24"
+                                                                                stroke="currentColor" stroke-width="2">
+                                                                                <path stroke-linecap="round"
+                                                                                    stroke-linejoin="round"
+                                                                                    d="M5 13l4 4L19 7" />
+                                                                            </svg>
+                                                                            <div>
+                                                                                <p
+                                                                                    class="text-lg font-medium text-gray-800">
+                                                                                    REGALO #2: "Los Secretos de los
+                                                                                    Sonidos Mágicos"</p>
+                                                                                <p class="text-sm text-gray-600">(Valor
+                                                                                    $19 USD)</p>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="offer-item">
+                                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                class="h-6 w-6 text-green-600"
+                                                                                fill="none" viewBox="0 0 24 24"
+                                                                                stroke="currentColor" stroke-width="2">
+                                                                                <path stroke-linecap="round"
+                                                                                    stroke-linejoin="round"
+                                                                                    d="M5 13l4 4L19 7" />
+                                                                            </svg>
+                                                                            <div>
+                                                                                <p
+                                                                                    class="text-lg font-medium text-gray-800">
+                                                                                    REGALO #3: "Números Mágicos para una
+                                                                                    Vida Abundante"</p>
+                                                                                <p class="text-sm text-gray-600">(Valor
+                                                                                    $27 USD)</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <hr class="my-6 border-emerald-300">
+                                                                    <p
+                                                                        class="text-2xl md:text-3xl font-bold mb-2 text-gray-600">
+                                                                        VALOR TOTAL: <br><span
+                                                                            class="line-through text-red-500">$77
+                                                                            USD</span></p>
+                                                                    <p
+                                                                        class="text-4xl md:text-5xl font-playfair font-bold mb-8 text-emerald-800">
+                                                                        HOY SOLO: $14 USD</p>
+                                                                    <div class="cta-button-wrapper">
+                                                                        <a href="https://go.hotmart.com/B100609339P?ap=50eb"
+                                                                            class="cta-button cta-button-animated bg-gradient-to-r from-green-600 to-emerald-800 hover:from-green-700 hover:to-emerald-900 text-white font-bold py-4 px-10 rounded-lg text-xl shadow-lg">
+                                                                            ¡SÍ, QUIERO LA VIDA DE MIS SUEÑOS!
+                                                                        </a>
+                                                                        <p class="mt-2 text-xs text-gray-500">Pago
+                                                                            seguro y acceso inmediato</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </section>
+
+                                                        <section class="py-12 md:py-16 px-4 fade-in-section">
+                                                            <h2
+                                                                class="font-playfair text-3xl md:text-4xl font-bold text-center mb-10 text-emerald-700">
+                                                                Preguntas Frecuentes</h2>
+                                                            <div class="max-w-3xl mx-auto">
+                                                                <div class="faq-item py-4">
+                                                                    <h3
+                                                                        class="text-xl font-semibold text-gray-800 mb-2">
+                                                                        ¿Cómo recibiré el material?</h3>
+                                                                    <p class="text-gray-700">Inmediatamente después de
+                                                                        tu compra, recibirás un correo electrónico con
+                                                                        un enlace para descargar el ebook "Merezco la
+                                                                        Vida de Mis Sueños" y todos los bonos. ¡Todo es
+                                                                        100% digital!</p>
+                                                                </div>
+                                                                <div class="faq-item py-4">
+                                                                    <h3
+                                                                        class="text-xl font-semibold text-gray-800 mb-2">
+                                                                        ¿Necesito conocimientos previos para entender el
+                                                                        ebook?</h3>
+                                                                    <p class="text-gray-700">No, en absoluto. "La Abu"
+                                                                        ha diseñado esta guía para ser fácil de entender
+                                                                        y aplicar, sin importar tu nivel de experiencia
+                                                                        en desarrollo personal o manifestación. Todo
+                                                                        está explicado de forma clara y sencilla.</p>
+                                                                </div>
+                                                                <div class="faq-item py-4">
+                                                                    <h3
+                                                                        class="text-xl font-semibold text-gray-800 mb-2">
+                                                                        ¿Esto es una suscripción o un pago único?</h3>
+                                                                    <p class="text-gray-700">Es un pago único. Una vez
+                                                                        que adquieres el ebook y los bonos, son tuyos
+                                                                        para siempre. No hay pagos recurrentes ni costos
+                                                                        ocultos.</p>
+                                                                </div>
+                                                                <div class="faq-item py-4">
+                                                                    <h3
+                                                                        class="text-xl font-semibold text-gray-800 mb-2">
+                                                                        ¿Qué pasa si no estoy satisfecha con el
+                                                                        contenido?</h3>
+                                                                    <p class="text-gray-700">Estamos tan seguras de que
+                                                                        amarás "Merezco la Vida de Mis Sueños" que te
+                                                                        ofrecemos una garantía de satisfacción de 7
+                                                                        días. Si por alguna razón no cumple tus
+                                                                        expectativas, contáctanos y te haremos un
+                                                                        reembolso completo. ¡Tu satisfacción es nuestra
+                                                                        prioridad!</p>
+                                                                </div>
+                                                                <div class="faq-item py-4">
+                                                                    <h3
+                                                                        class="text-xl font-semibold text-gray-800 mb-2">
+                                                                        ¿Es seguro realizar el pago?</h3>
+                                                                    <p class="text-gray-700">Sí, absolutamente.
+                                                                        Utilizamos Hotmart, una plataforma de pagos
+                                                                        segura y reconocida a nivel mundial, que protege
+                                                                        tu información personal y financiera. Puedes
+                                                                        comprar con total tranquilidad.</p>
+                                                                </div>
+                                                            </div>
+                                                        </section>
+
+                                                        <footer
+                                                            class="text-center py-8 bg-gray-100 rounded-xl shadow-inner mx-4 md:mx-0 my-10 text-gray-600 text-sm">
+                                                            <p>&copy; 2025 Merezco la Vida de Mis Sueños. Todos los
+                                                                derechos reservados.</p>
+                                                            <p class="mt-2">
+                                                                <a href="#"
+                                                                    class="text-emerald-600 hover:underline">Política de
+                                                                    Privacidad</a> |
+                                                                <a href="#"
+                                                                    class="text-emerald-600 hover:underline">Términos de
+                                                                    Servicio</a>
+                                                            </p>
+                                                        </footer>
+
+                                                    </div>
+
+                                                    <script>
+                                                        document.addEventListener("DOMContentLoaded", function () {
+                                                            const sections = document.querySelectorAll(".fade-in-section");
+
+                                                            const observerOptions = {
+                                                                root: null,
+                                                                rootMargin: "0px",
+                                                                threshold: 0.1
+                                                            };
+
+                                                            const observer = new IntersectionObserver((entries, observer) => {
+                                                                entries.forEach(entry => {
+                                                                    if (entry.isIntersecting) {
+                                                                        entry.target.classList.add("is-visible");
+                                                                        observer.unobserve(entry.target);
+                                                                    }
+                                                                });
+                                                            }, observerOptions);
+
+                                                            sections.forEach(section => {
+                                                                observer.observe(section);
+                                                            });
+                                                        });
+                                                    </script>
+                                                </body>
+
+                                                </html>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
             </div>
-            <p>Es hora de ir más allá de las afirmaciones vacías y aplicar un enfoque probado.</p>
-        </div>
-    </div>
-
-    <div class="section">
-        <div class="container">
-            <h2>Descubre el Método Científico para Manifestar lo Imposible</h2>
-            <div class="content-card fade-in">
-                <h3 style="color: #333842;">Lo que "Más que Afirmaciones" hará por ti:</h3>
-                <ul class="benefit-list">
-                    <li class="benefit-item">Entenderás la VERDADERA razón por la que tus deseos no se han materializado, incluso si has practicado la Ley de Atracción.</li>
-                    <li class="benefit-item">Aprenderás a reprogramar tu subconsciente utilizando principios de neurociencia, eliminando bloqueos que ni siquiera sabías que tenías.</li>
-                    <li class="benefit-item">Activarás la coherencia entre tu mente, tu cuerpo y tus emociones para enviar una señal clara al universo.</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <div class="section">
-        <div class="container">
-            <h2>¿Qué dicen quienes ya están Transformando su Realidad?</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial-card fade-in">
-                    <div class="testimonial-rating">★★★★★</div>
-                    <p class="testimonial-quote">"Siempre visualicé, pero 'Más que Afirmaciones' me dio la clave que faltaba: la coherencia. Ahora veo resultados reales, no solo deseos. ¡Es un cambio de juego!"</p>
-                    <p class="testimonial-author">- Andrea M.</p>
-                </div>
-                <div class="testimonial-card fade-in">
-                    <div class="testimonial-rating">★★★★★</div>
-                    <p class="testimonial-quote">"La sección de los 'saboteadores' fue una revelación. Me di cuenta de patrones inconscientes que me estaban bloqueando. Ahora aplico la ciencia y todo fluye mejor."</p>
-                    <p class="testimonial-author">- Carlos R.</p>
-                </div>
-                <div class="testimonial-card fade-in">
-                    <div class="testimonial-rating">★★★★★</div>
-                    <p class="testimonial-quote">"El Diario Cuántico es mi ritual diario. Me ayuda a mantenerme enfocada y sentir gratitud anticipada. Siento que mi cerebro se está reconfigurando. ¡Gracias!"</p>
-                    <p class="testimonial-author">- Sofía P.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="section offer-cta-section">
-        <div class="container">
-            <h2>¡Tu Transformación Comienza Hoy!</h2>
-            <p>Adquiere "Más que Afirmaciones" y recibe 3 OBSEQUIOS EXCLUSIVOS que potenciarán tu camino:</p>
-
-            <div class="offer-stack">
-                <div class="offer-item fade-in">
-                    <img src="Mockup Bono 1.png" alt="Bono 1 Diario Cuántico">
-                    <h3>OBSEQUIO 1: DIARIO CUÁNTICO</h3>
-                    <p>Tu herramienta diaria para alinear pensamientos, emociones y acciones, reprogramando tu subconsciente y dirigiendo tu atención para manifestar con una coherencia impecable. Cada entrada se convierte en un acto de co-creación con el universo.</p>
-                </div>
-                <div class="offer-item fade-in">
-                    <img src="Mockup Bono 2.png" alt="Bono 2 Los 10 Saboteadores de tu Manifestación">
-                    <h3>OBSEQUIO 2: LOS 10 SABOTEADORES DE TU MANIFESTACIÓN</h3>
-                    <p>Descubre los bloqueos invisibles que le gritan al universo "¡No estoy listo!" y aprende a identificarlos y eliminarlos con neurociencia aplicada. Deja de autosabotearte sin siquiera saberlo y acelera tu camino hacia lo que deseas.</p>
-                </div>
-                <div class="offer-item fade-in">
-                    <img src="Mockup Bono 3.png" alt="Bono 3 La Lista Dorada de Ejercicios Cuántico-Científicos">
-                    <h3>OBSEQUIO 3: LA LISTA DORADA DE EJERCICIOS CUÁNTICO-CIENTÍFICOS</h3>
-                    <p>Técnicas poco conocidas y poderosas, inspiradas en gigantes como Joe Dispenza y Bruce Lipton, para activar tu campo de manifestación y reprogramar tu mente desde el cuerpo y la energía. Ejercicios avanzados, pero simples, para quienes están listos para una transformación real y profunda.</p>
-                </div>
-            </div>
-
-            <div class="price-box fade-in">
-                <p>ACCESO INSTANTÁNEO POR SÓLO:</p>
-                <span class="new-price"><span class="currency">$</span>5.99 USD</span>
-                <p class="price-note">Pago único - Acceso de por vida</p>
-            </div>
-
-            <a href="https://pay.hotmart.com/L100515684I?checkoutMode=10" class="btn-primary" style="margin-top: 40px;">¡SÍ, Quiero activar mi campo de posibilidades!</a>
-
-        </div>
-    </div>
-
-    <div class="section">
-        <div class="container">
-            <h2>Muestra de "Más que Afirmaciones"</h2>
-            <p>Echa un vistazo a las primeras páginas de tu nuevo camino hacia la manifestación:</p>
-            <div class="ebook-preview-carousel">
-                <div class="ebook-page active" id="page-1">
-                    <img src="1.png" alt="Manifiesta con Ciencia Página 1">
-                </div>
-                <div class="ebook-page" id="page-2">
-                    <img src="2.png" alt="Manifiesta con Ciencia Página 2">
-                </div>
-                <div class="ebook-page" id="page-3">
-                    <img src="3.png" alt="Manifiesta con Ciencia Página 3">
-                </div>
-                <div class="ebook-page" id="page-4">
-                    <img src="4.png" alt="Manifiesta con Ciencia Página 4">
-                </div>
-                <div class="ebook-page" id="page-5">
-                    <img src="5.png" alt="Manifiesta con Ciencia Página 5">
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="section">
-        <div class="container">
-            <h2>Preguntas Frecuentes</h2>
-            <div class="faq-list">
-                <div class="faq-item content-card fade-in">
-                    <div class="faq-question">¿Este ebook es para principiantes?</div>
-                    <div class="faq-answer">Sí, está diseñado para cualquier persona interesada en la manifestación, desde quienes están empezando hasta quienes ya han intentado otros métodos sin éxito.</div>
-                </div>
-                <div class="faq-item content-card fade-in">
-                    <div class="faq-question">¿Necesito tener conocimientos científicos previos?</div>
-                    <div class="faq-answer">No, el ebook explica los conceptos de neurociencia, epigenética y física cuántica de una manera sencilla y práctica para que cualquiera pueda entenderlos y aplicarlos.</div>
-                </div>
-                <div class="faq-item content-card fade-in">
-                    <div class="faq-question">¿Qué diferencia a este ebook de otros libros de manifestación?</div>
-                    <div class="faq-answer">La clave está en su enfoque científico y práctico. No solo te dice "qué hacer", sino "por qué funciona" y te da herramientas específicas para reprogramar tu biología y energía, no solo tus pensamientos.</div>
-                </div>
-                <div class="faq-item content-card fade-in">
-                    <div class="faq-question">¿Cómo recibo los bonos y el ebook una vez comprado?</div>
-                    <div class="faq-answer">Inmediatamente después de tu compra exitosa a través de Hotmart, recibirás un correo electrónico con las instrucciones y enlaces para descargar tu ebook principal y los 3 bonos exclusivos.</div>
-                </div>
-                <div class="faq-item content-card fade-in">
-                    <div class="faq-question">¿La garantía de 7 días es real?</div>
-                    <div class="faq-answer">Absolutamente. Estamos seguros del valor de "Más que Afirmaciones". Si en los primeros 7 días no sientes que es para ti, simplemente contáctanos y te devolveremos tu dinero, sin hacer preguntas.</div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Código Manifiesto. Todos los derechos reservados.</p>
-            <p>Contacto: <a href="manifiestocodigo@gmail.com">manifiestocodigo@gmail.com</a></p>
-        </div>
-    </footer>
-
-    <script>    
-        // Smooth scrolling para los botones de llamada a la acción
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Lógica para las FAQ
-        document.querySelectorAll('.faq-item').forEach(item => {
-            item.addEventListener('click', () => {
-                item.classList.toggle('active');
-            });
-        });
-
-        // Carrusel de la muestra del ebook
-        const pages = document.querySelectorAll('.ebook-page');
-        let currentPage = 0;
-
-        function showNextPage() {
-            pages[currentPage].classList.remove('active');
-            currentPage = (currentPage + 1) % pages.length;
-            pages[currentPage].classList.add('active');
-        }
-
-        if (pages.length > 0) {
-            pages[0].classList.add('active'); // Muestra la primera página al cargar
-            setInterval(showNextPage, 3000); // Cambia de página cada 3 segundos
-        }
-
-        // Animación de aparición para las tarjetas de contenido
-        const contentCards = document.querySelectorAll('.content-card, .testimonial-card, .offer-item, .price-box, .guarantee-box, .faq-item');
-
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        contentCards.forEach(card => {
-            observer.observe(card);
-        });
-
-    </script>
 </body>
+
 </html>
